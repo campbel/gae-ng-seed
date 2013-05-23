@@ -1,0 +1,20 @@
+application: myapp
+version: 1
+runtime: go
+api_version: go1
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+- url: /css
+  static_dir: ./static/css
+- url: /img
+  static_dir: ./static/img
+- url: /js
+  static_dir: ./static/js
+- url: /lib
+  static_dir: ./static/lib
+- url: /partials
+  static_dir: ./static/partials
+- url: /.*
+  script: _go_app
