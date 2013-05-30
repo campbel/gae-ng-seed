@@ -7,14 +7,16 @@ handlers:
   static_files: favicon.ico
   upload: favicon\.ico
 - url: /css
-  static_dir: ./client/src/css
+  static_dir: client/app/css
 - url: /img
-  static_dir: ./client/src/img
+  static_dir: client/app/img
 - url: /js
-  static_dir: ./client/src/js
+  static_dir: client/app/js
 - url: /lib
-  static_dir: ./client/lib
+  static_dir: client/app/lib
 - url: /partials
-  static_dir: ./client/src/partials
+  static_dir: client/app/partials
+- url: /test
+  static_dir: client/test
 - url: /.*
   script: _go_app

@@ -3,7 +3,7 @@
 <html lang="en" ng-app="myApp">
   <head>
     <meta charset="utf-8">
-    <title>My AngularJS App</title>
+    <title>GAE-NG-Seed</title>
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css"/>
     <style>
       body {
@@ -17,28 +17,28 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
-          <a class="brand" href="#">Project name</a>
+          <a class="brand" href="#">GAE-NG-Seed</a>
           <ul class="nav pull-right">
-            {{if .login}}
-            <li><a href="{{.login}}">Sign In</a></li>
-            {{end}}
-            {{if .logout}}
+            {{if .}}
             <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                {{.email}}
-                <b class="caret"></b>
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{.Email}}<b class="caret"></b>
               </a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#/settings">Settings</a></li>
-                  <li role="presentation" class="divider"></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" ng-href="{{.logout}}">Logout</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" ng-href="/logout">Sign Out</a></li>
               </ul>
             </li>
+            {{else}}
+            <li><a href="/login">Sign In</a></li>
             {{end}}
           </ul>
         </div>
       </div>
     </div>
+
+    <ul class="menu">
+      <li><a href="#/view1">view1</a></li>
+      <li><a href="#/view2">view2</a></li>
+    </ul>
 
     <div ng-view></div>
 
