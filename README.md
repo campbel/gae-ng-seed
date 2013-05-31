@@ -5,7 +5,7 @@ Visit the boiler plate hosted at http://gae-ng-seed.appspot.com/
 
 <a href="https://developers.google.com/appengine/">Google App Engine</a> / <a href="http://golang.org/">Go Lang</a> / <a href="http://angularjs.org/">Angular JS Seed Project</a>
 
-This project applies the <a href="https://github.com/angular/angular-seed">Angular-Seed</a> into the GAE with Go context.
+This project applies the <a href="https://github.com/angular/angular-seed">Angular-Seed</a> into the GAE with Go.
 
 ##Included
 
