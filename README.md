@@ -21,11 +21,11 @@ The server comes ready with...
   3. Sample 'User' REST web service (/api/user)
   4. Starter landing page using a bootstrap template
 
-##Install
+##Install & Setup
 
-###Google App Engine SDK for Go 
+###Get Google App Engine SDK for Go 
 
-Download the GAE SDK for Go from Google at ...
+Download available at ...
 https://developers.google.com/appengine/downloads#Google_App_Engine_SDK_for_Go
 
 ###Clone the gae-ng-seed project 
