@@ -38,6 +38,13 @@ https://developers.google.com/appengine/downloads#Google_App_Engine_SDK_for_Go
 
 Typically the GAE dev server will run on port 8080. Browse to http://localhost:8080 to see the app running.
 
+###Kickoff the e2e scenario tests
+
+Included is the setup for the e2e testing courtesy of angulars scenario testing framework.
+Travel to http://localhost:8080/test/e2e/runner.html when the GAE dev server is running to kickoff a run.
+A demo of this is available at http://gae-ng-seed.appspot.com/test/e2e/runner.html
+
+
 ##Optional
 
 ###<a href="http://karma-runner.github.io/0.8/index.html">Karma</a>
