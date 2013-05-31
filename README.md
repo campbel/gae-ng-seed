@@ -40,7 +40,7 @@ Typically the GAE dev server will run on port 8080. Browse to http://localhost:8
 
 ###Kickoff the e2e scenario tests
 
-Included is the setup for the e2e testing courtesy of angulars scenario testing framework.
+Included is the setup for the e2e testing courtesy of angular.
 Travel to http://localhost:8080/test/e2e/runner.html when the GAE dev server is running to kickoff a run.
 A demo of this is available at http://gae-ng-seed.appspot.com/test/e2e/runner.html
 
