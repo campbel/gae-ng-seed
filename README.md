@@ -55,4 +55,4 @@ The karma test runner is used to automatically watch and run tests when your cod
 
 Before uploading your app make sure to change the application name in the app.yaml.
 
-This project is just a start. For a more thorough understandiung of Angular, Go and Google's App Engine, visit their respective docs.
+This project is just a start. For a more info on Angular, Go and Google's App Engine, visit their respective docs.
