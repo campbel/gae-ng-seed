@@ -5,27 +5,63 @@ import (
 	"net/http"
 )
 
-// Create a Handler that maps to the given functions
+// Shortcut for routing http methods to handlers and serializing structs to JSON
 func CreateHandler(get, post, put, del func(http.ResponseWriter, *http.Request) (v interface{})) func(http.ResponseWriter, *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
 		var obj interface{}
+
+		/* 
+			MUX the incomming requests method
+			responde with Status '501 - StatusNotImplemented' for any methods we don't have handlers for
+		*/
 		switch r.Method {
 		case "GET":
-			obj = get(w, r)
+			if get != nil {
+				obj = get(w, r)
+			} else {
+				w.WriteHeader(http.StatusNotImplemented)
+				return
+			}
 		case "POST":
-			obj = post(w, r)
+			if post != nil {
+				obj = post(w, r)
+			} else {
+				w.WriteHeader(http.StatusNotImplemented)
+				return
+			}
 		case "PUT":
-			obj = put(w, r)
+			if put != nil {
+				obj = put(w, r)
+			} else {
+				w.WriteHeader(http.StatusNotImplemented)
+				return
+			}
 		case "DELETE":
-			obj = del(w, r)
+			if del != nil {
+				obj = del(w, r)
+			} else {
+				w.WriteHeader(http.StatusNotImplemented)
+				return
+			}
+		default:
+			w.WriteHeader(http.StatusNotImplemented)
+			return
 		}
-		buff, err := json.Marshal(obj)
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-		} else {
-			w.Header().Set("Content-Type", "application/json")
-			w.Write(buff)
+
+		/*
+			Handlers might not give us data as they are also capable of sending responses. If we have nothing return.
+			If no response is written, Status 200 - OK will be returned.
+		*/
+		if obj != nil {
+			buff, err := json.Marshal(obj)
+			if err != nil {
+				http.Error(w, err.Error(), http.StatusInternalServerError)
+			} else {
+				w.Header().Set("Content-Type", "application/json")
+				w.Write(buff)
+			}
 		}
+
 		return
 	}
 }
