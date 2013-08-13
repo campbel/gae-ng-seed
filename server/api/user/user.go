@@ -3,16 +3,15 @@ package user
 import (
 	"appengine"
 	"appengine/user"
-	"net/http"
-	"server/common"
+	"github.com/campbel/gore"
 )
 
 func init() {
-	http.HandleFunc("/api/user", common.CreateHandler(get, nil, nil, nil))
+	gore.CreateHandler("/api/user/").Get(get)
 }
 
-func get(w http.ResponseWriter, r *http.Request) interface{} {
-	c := appengine.NewContext(r)
+func get(r *gore.Request) interface{} {
+	c := appengine.NewContext(r.Request)
 	u := user.Current(c)
 	return u
 }
