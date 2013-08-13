@@ -4,6 +4,7 @@
   "devDependencies": {
     "grunt-contrib-sass": "~0.4.1",
     "grunt-contrib-uglify": "~0.2.2",
-    "grunt-contrib-watch": "~0.5.1"
+    "grunt-contrib-watch": "~0.5.1",
+    "grunt-karma": "~0.6.1"
   }
 }
