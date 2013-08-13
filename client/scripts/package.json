@@ -1,5 +1,5 @@
 {
-  "name": "activemarketing",
+  "name": "myApp",
   "version": "0.1.0",
   "devDependencies": {
     "grunt-contrib-sass": "~0.4.1",

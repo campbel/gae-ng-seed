@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: ['../app/css/app.scss'],
-        tasks: ['sass'],
+        tasks: ['sass.dev'],
         options: {
           spawn: false,
         },
@@ -21,13 +21,27 @@ module.exports = function(grunt) {
         }
       }
     }
+    karma: {
+      dev: {
+        basePath: '../',
+        frameworks: ['jasmine'],
+        autowatch: true,
+        browsers: ['Chrome' /*, 'IE', 'Firefox'*/],
+        files: [
+        'app/lib/angular/angular.min.js',
+        'test/lib/angular/angular-mocks.js',
+        'app/js/*.js',
+        'test/unit/**/*.js'
+        ]
+      }
+    }
   });
 
-  // Load the plugin that provides the "uglify" task.
+  // Load the plugins.
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('default', ['watch', 'karma']);
 
 };
