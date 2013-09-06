@@ -9,17 +9,15 @@ This project applies the <a href="https://github.com/angular/angular-seed">Angul
 
 ##Included
 
-  1. Bootstap CSS / JS
-  2. jQuery 2.0
-  3. Angular 1.0.6
+  1. Bootstap CSS
+  3. Angular 1.2 RC1
   4. Jasmine test suite
   5. Karma test runner config
 
 The server comes ready with...
   1. Handlers for authentication
-  2. Shortuct handler function (server/common/commong.go)
-  3. Sample 'User' REST web service (/api/user)
-  4. Starter landing page using a bootstrap template
+  2. Sample 'User' REST web service (/api/user)
+  3. Starter landing page using a bootstrap template
 
 ##Install & Setup
 
