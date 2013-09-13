@@ -5,6 +5,7 @@ import (
 	"appengine/user"
 	"html/template"
 	"net/http"
+	"server/gore"
 )
 
 var templates = template.Must(template.ParseGlob("server/index.html"))
@@ -12,6 +13,7 @@ var templates = template.Must(template.ParseGlob("server/index.html"))
 func init() {
 	http.HandleFunc("/login", loginHandle)
 	http.HandleFunc("/logout", logoutHandle)
+	gore.Start("/api/")
 	http.HandleFunc("/", root)
 }
 
