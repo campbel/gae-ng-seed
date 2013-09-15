@@ -18,9 +18,10 @@ func init() {
 }
 
 func root(w http.ResponseWriter, r *http.Request) {
-	c := appengine.NewContext(r)
-	u := user.Current(c)
-	templates.ExecuteTemplate(w, "index", u)
+	data := make(map[string]string)
+	data["token"] = CreateXSRFToken(w, r)
+
+	templates.ExecuteTemplate(w, "main", data)
 }
 
 func loginHandle(w http.ResponseWriter, r *http.Request) {

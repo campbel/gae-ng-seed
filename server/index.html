@@ -1,4 +1,4 @@
-{{define "index"}}
+{{define "main"}}
 <!doctype html>
 <html lang="en" ng-app="myApp">
   <head>
@@ -12,6 +12,7 @@
 
     <div ng-view></div>
 
+    <input type="hidden" id="xsrftoken" name="xsrftoken" value="{{.token}}"/>
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular/angular-route.js"></script>
     <script src="lib/angular/angular-animate.js"></script>
