@@ -2,6 +2,6 @@
 (function() {
 'use strict';
 
-	angular.module('myApp.directives', [])
+	angular.module('myApp')
 
 }());

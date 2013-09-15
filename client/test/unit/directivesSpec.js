@@ -2,10 +2,10 @@
 
 describe('directives', function() {
   
-  beforeEach(module('myApp.directives'));
+	beforeEach(module('myApp'));
 
-  it('', function() {
+	it('', function() {
 
-  });
+	});
 
 });

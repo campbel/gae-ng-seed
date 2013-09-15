@@ -2,7 +2,7 @@
 
 describe('filter', function() {
 	
-	beforeEach(module('myApp.filters'));
+	beforeEach(module('myApp'));
 
 	it('', function() {
 

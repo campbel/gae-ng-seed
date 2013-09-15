@@ -3,7 +3,7 @@ package user
 import (
 	"appengine"
 	"appengine/user"
-	"server/gore"
+	"github.com/campbel/gore"
 )
 
 func init() {

@@ -2,10 +2,10 @@
 
 describe('controllers', function(){
   
-  beforeEach(module('myApp.controllers'));
+	beforeEach(module('myApp'));
 
-  it('', function() {
+	it('', function() {
 	expect(true).toBe(true);
-  });
+	});
 
 });

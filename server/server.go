@@ -5,7 +5,7 @@ import (
 	"appengine/user"
 	"html/template"
 	"net/http"
-	"server/gore"
+	"github.com/campbel/gore"
 )
 
 var templates = template.Must(template.ParseGlob("server/index.html"))

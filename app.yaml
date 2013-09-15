@@ -14,9 +14,17 @@ handlers:
   static_dir: client/app/js
 - url: /lib
   static_dir: client/app/lib
-- url: /partials
-  static_dir: client/app/partials
+- url: /views
+  static_dir: client/app/views
 - url: /test
   static_dir: client/test
 - url: /.*
   script: _go_app
+skip_files:
+- ^(.*/)?#.*#
+- ^(.*/)?.*~
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?.*/RCS/.*
+- ^(.*/)?\..*
+- /client/grunt/
+- /client/test/

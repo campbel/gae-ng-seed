@@ -2,10 +2,10 @@
 
 describe('service', function() {
   
-  beforeEach(module('myApp.services'));
+	beforeEach(module('myApp'));
 
-  it('', function() {
+	it('', function() {
 
-  });
+	});
 
 });
