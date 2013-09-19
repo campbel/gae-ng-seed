@@ -10,7 +10,7 @@
   </head>
   <body>
 
-    <div ng-view></div>
+    <div ng-view></div> 
 
     <input type="hidden" id="xsrftoken" name="xsrftoken" value="{{.token}}"/>
     <script src="lib/angular/angular.js"></script>
@@ -21,6 +21,12 @@
     <script src="js/controllers.js"></script>
     <script src="js/filters.js"></script>
     <script src="js/directives.js"></script>
+
+    {{if .dev}}
+    <!-- Dev Only Scripts -->
+    <script src="http://localhost:35729/livereload.js"></script>
+    {{end}}
+
   </body>
 </html>
 {{end}}

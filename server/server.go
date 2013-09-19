@@ -6,6 +6,7 @@ import (
 	"html/template"
 	"net/http"
 	"github.com/campbel/gore"
+	"strconv"
 )
 
 var templates = template.Must(template.ParseGlob("server/index.html"))
@@ -20,6 +21,7 @@ func init() {
 func root(w http.ResponseWriter, r *http.Request) {
 	data := make(map[string]string)
 	data["token"] = CreateXSRFToken(w, r)
+	data["dev"] = strconv.FormatBool(appengine.IsDevAppServer())
 
 	templates.ExecuteTemplate(w, "main", data)
 }

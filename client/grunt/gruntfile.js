@@ -5,7 +5,10 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: ['../app/css/app.scss'],
-        tasks: ['sass']
+        tasks: ['sass'],
+        options: {
+          livereload: true,   
+        },
       },
       karma: {
       	files: ['../app/js/*.js', '../test/unit/*.js'],
