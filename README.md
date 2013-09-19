@@ -10,14 +10,15 @@ This project applies the <a href="https://github.com/angular/angular-seed">Angul
 ##Included
 
   1. Bootstap CSS
-  3. Angular 1.2 RC1
-  4. Jasmine test suite
-  5. Karma test runner config
+  3. Angular 1.2 RC2
+  5. Karma test runner
+  6. Grunt task runner
 
 The server comes ready with...
   1. Handlers for authentication
-  2. Sample 'User' REST web service (/api/user)
-  3. Starter landing page using a bootstrap template
+  2. HTML templating
+  3. Live reload
+  4. CSRF token generation
 
 ##Install & Setup
 
@@ -35,19 +36,6 @@ https://developers.google.com/appengine/downloads#Google_App_Engine_SDK_for_Go
 <code>dev_appserver.py ./</code>
 
 Typically the GAE dev server will run on port 8080. Browse to http://localhost:8080 to see the app running.
-
-###Kickoff the e2e scenario tests
-
-Included is the setup for the e2e testing courtesy of angular.
-Travel to http://localhost:8080/test/e2e/runner.html when the GAE dev server is running to kickoff a run.
-A demo of this is available at http://gae-ng-seed.appspot.com/test/e2e/runner.html
-
-
-##Optional
-
-###<a href="http://karma-runner.github.io/0.8/index.html">Karma</a>
-
-The karma test runner is used to automatically watch and run tests when your code changes. This is great for following test driven development methodology. The gae-ng-seed project comes with a karma config that will work with the setup. Once Karma is installed head to /client/scripts and execute test.bat OR head to /client/config on the command line and execute <code>karma start</code>
 
 ##Notes
 
