@@ -1,11 +1,14 @@
-'use strict';
+(function() {
+  'use strict';
 
-describe('service', function() {
+  describe('services', function(){
+
+    beforeEach(module('myApp'));
+
+    it('', function() {
+      expect(true).toBe(true);
+    });
+
+  });
   
-	beforeEach(module('myApp'));
-
-	it('', function() {
-
-	});
-
-});
+}());

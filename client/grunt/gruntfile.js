@@ -3,17 +3,34 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     watch: {
-      sass: {
+      options: {
+        atBegin: true
+      },
+      css: {
         files: ['../app/css/app.scss'],
         tasks: ['sass'],
         options: {
           livereload: true,   
         },
       },
-      karma: {
-      	files: ['../app/js/*.js', '../test/unit/*.js'],
-      	tasks: ['karma:dev:run']
+      js: {
+        files: ['../app/js/*.js', '../test/unit/*.js'],
+        tasks: ['karma:dev:run', 'jshint']
       }
+    },
+    jshint: {
+      options: {
+        globals: {
+          describe: true,
+          it: true,
+          module: true,
+          angular: true,
+          expect: true,
+          beforeEach: true,
+          afterEach: true
+        }
+      },
+      all: ['gruntfile.js', '../app/js/*.js', '../test/unit/*.js']
     },
     sass: {
       dev: {
@@ -27,13 +44,14 @@ module.exports = function(grunt) {
     },
     karma: {
       dev: {
-      	configFile: 'karma.conf.js',
-      	background: true
+        configFile: 'karma.conf.js',
+        background: true
       }
     }
   });
 
   // Load the plugins.
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-karma');

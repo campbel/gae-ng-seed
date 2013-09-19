@@ -1,11 +1,14 @@
-'use strict';
+(function() {
+  'use strict';
 
-describe('filter', function() {
-	
-	beforeEach(module('myApp'));
+  describe('filters', function(){
 
-	it('', function() {
+    beforeEach(module('myApp'));
 
-	});
+    it('', function() {
+      expect(true).toBe(true);
+    });
 
-});
+  });
+  
+}());

@@ -1,11 +1,14 @@
-'use strict';
+(function() {
+  'use strict';
 
-describe('controllers', function(){
-  
-	beforeEach(module('myApp'));
+  describe('controllers', function(){
 
-	it('', function() {
-	expect(true).toBe(true);
-	});
+    beforeEach(module('myApp'));
 
-});
+    it('', function() {
+      expect(true).toBe(true);
+    });
+
+  });
+
+}());
