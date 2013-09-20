@@ -17,7 +17,7 @@ handlers:
 - url: /views
   static_dir: client/app/views
 - url: /dist
-  static_dir: client/dist
+  static_dir: client/app/dist
 - url: /.*
   script: _go_app
 skip_files:
