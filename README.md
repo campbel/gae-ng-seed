@@ -6,16 +6,19 @@ gae-ng-seed
 
 ##Included
 
-  1. Bootstap CSS 2.0
-  3. Angular JS 1.2 RC2
-  5. Karma test runner
-  6. Grunt task runner
+**Libraries**
++ Bootstap CSS 2.0
++ Angular JS 1.2 RC2
 
-The server comes ready with...
-  1. Handlers for authentication
-  2. HTML templating
-  3. Live reload
-  4. CSRF token generation
+**Grunt Dev**
++ Sass
++ Karma
++ JSHint
+
+**Grunt Dist**
++ Uglify
+
+The server uses Go Templating from "html/template" package to drive which scripts to load (pretty vs minified).
 
 ##Install & Setup
 
