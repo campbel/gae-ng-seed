@@ -21,13 +21,13 @@ func CreateXSRFToken(w http.ResponseWriter, r *http.Request) (string) {
 
 	// first parameter should be changed to a secret key
 	token := xsrftoken.Generate("myAppsSecretToken", u.ID, "api")
-	
+
 	cookie := http.Cookie {
-		Name: "XSRF-token", 
+		Name: "XSRF-token",
 		Value: token,
 		Path: "/",
 	}
-	
+
 	http.SetCookie(w, &cookie)
 
 	return token
