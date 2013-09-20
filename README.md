@@ -1,5 +1,6 @@
 gae-ng-seed
 ===========
+<a href="https://gae-ng-seed.appspot.com/">See the seed project running</a>
 
 <a href="https://developers.google.com/appengine/">Google App Engine</a> / <a href="http://golang.org/">Go Lang</a> / <a href="http://angularjs.org/">Angular JS</a>
 
