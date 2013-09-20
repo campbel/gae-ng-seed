@@ -10,12 +10,19 @@ module.exports = function(grunt) {
         files: ['../app/css/app.scss'],
         tasks: ['sass'],
         options: {
-          livereload: true,   
+          livereload: true,
         },
       },
       js: {
         files: ['../app/js/*.js', '../test/unit/*.js'],
         tasks: ['karma:dev:run', 'jshint']
+      }
+    },
+    uglify: {
+      dist: {
+        files: {
+          '../app/dist/app.min.js': ['../app/js/app.js', '../app/js/controllers.js', '../app/js/directives.js', '../app/js/filters.js', '../app/js/services.js']
+        }
       }
     },
     jshint: {
@@ -40,17 +47,40 @@ module.exports = function(grunt) {
         files: {
           '../app/css/app.css' : '../app/css/app.scss'
         }
+      },
+      dist: {
+        options: {
+          style: 'expanded'
+        },
+        files: {
+          '../app/css/app.css' : '../app/css/app.scss'
+        }
       }
     },
     karma: {
       dev: {
         configFile: 'karma.conf.js',
         background: true
+      },
+      dist: {
+        options: {
+          files: [
+            'app/lib/angular/angular.js',
+            'app/lib/angular/angular-route.js',
+            'app/lib/angular/angular-animate.js',
+            'test/lib/angular/angular-mocks.js',
+            'app/dist/app.min.js',
+            'test/unit/*.js'
+          ],
+        },
+        configFile: 'karma.conf.js',
+        singleRun: true,
       }
     }
   });
 
   // Load the plugins.
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -58,5 +88,6 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('default', ['karma:dev', 'watch']);
+  grunt.registerTask('dist', ['jshint', 'uglify:dist', 'sass:dist', 'karma:dist']);
 
 };

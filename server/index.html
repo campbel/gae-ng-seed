@@ -3,28 +3,35 @@
 <html lang="en" ng-app="myApp">
   <head>
     <meta charset="utf-8">
-    <title>GAE-NG-Seed</title>
+    <title>My App</title>
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-glyphicons.css"/>
     <link rel="stylesheet" href="css/app.css"/>
   </head>
   <body>
 
-    <div ng-view></div> 
+    <div ng-view></div>
 
     <input type="hidden" id="xsrftoken" name="xsrftoken" value="{{.token}}"/>
+
+    <!-- Dev / Dist Scripts -->
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular/angular-route.js"></script>
     <script src="lib/angular/angular-animate.js"></script>
+    {{if .dev}}
+    <!-- Dev Only Scripts -->
+    <script src="http://localhost:35729/livereload.js"></script>
     <script src="js/app.js"></script>
     <script src="js/services.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/filters.js"></script>
     <script src="js/directives.js"></script>
-
-    {{if .dev}}
-    <!-- Dev Only Scripts -->
-    <script src="http://localhost:35729/livereload.js"></script>
+    {{else}}
+    <!-- Dist Only Scripts -->
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular/angular-route.min.js"></script>
+    <script src="lib/angular/angular-animate.min.js"></script>
+    <script src="dist/app.min.js"></script>
     {{end}}
 
   </body>
