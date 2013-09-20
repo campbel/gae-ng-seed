@@ -1,4 +1,2 @@
-# Grunt Modules #
-#################
 client/grunt/node_modules/*
 client/grunt/.sass-cache/*
