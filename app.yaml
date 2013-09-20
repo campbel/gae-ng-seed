@@ -26,5 +26,7 @@ skip_files:
 - ^(.*/)?.*\.py[co]
 - ^(.*/)?.*/RCS/.*
 - ^(.*/)?\..*
-- /client/grunt/
-- /client/test/
+- ^(.*/)?.*/grunt/.*
+- ^(.*/)?.*/test/.*
+- ^(.*/)?.*\.map
+- ^(.*/)?.*\.json
