@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+  'use strict';
 
   // Project configuration.
   grunt.initConfig({
@@ -10,18 +11,29 @@ module.exports = function(grunt) {
         files: ['../app/css/app.scss'],
         tasks: ['sass'],
         options: {
-          livereload: true,
+          livereload: true
         },
       },
       js: {
-        files: ['../app/js/*.js', '../test/unit/*.js'],
-        tasks: ['karma:dev:run', 'jshint']
+        files: ['../app/js/app.js', '../app/js/**/*.js', '../test/unit/*.js'],
+        tasks: ['jshint'],
+        options: {
+          livereload: true
+        }
       }
     },
     uglify: {
+      dev: {
+        options: {
+          sourceMap: true
+        },
+        files: {
+          '../app/dist/app.min.js': ['../app/js/app.js', '../app/js/**/*.js']
+        }
+      },
       dist: {
         files: {
-          '../app/dist/app.min.js': ['../app/js/app.js', '../app/js/controllers.js', '../app/js/directives.js', '../app/js/filters.js', '../app/js/services.js']
+          '../app/dist/app.min.js': ['../app/js/app.js', '../app/js/**/*.js']
         }
       }
     },
@@ -37,7 +49,7 @@ module.exports = function(grunt) {
           afterEach: true
         }
       },
-      all: ['gruntfile.js', '../app/js/*.js', '../test/unit/*.js']
+      all: ['gruntfile.js', '../app/js/app.js', '../app/js/**/*.js', '../test/unit/*.js']
     },
     sass: {
       dev: {
@@ -87,7 +99,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-karma');
 
   // Default task(s).
-  grunt.registerTask('default', ['karma:dev', 'watch']);
+  grunt.registerTask('default', ['watch']);
   grunt.registerTask('dist', ['jshint', 'uglify:dist', 'sass:dist', 'karma:dist']);
 
 };

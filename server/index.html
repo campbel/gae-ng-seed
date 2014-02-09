@@ -10,7 +10,9 @@
   </head>
   <body>
 
-    <div ng-view></div>
+    <div class="container">
+      <div ng-view></div>
+    </div>
 
     <input type="hidden" id="xsrftoken" name="xsrftoken" value="{{.XSRFToken}}"/>
 
@@ -21,11 +23,14 @@
     <script src="lib/angular/angular-route.js"></script>
     <script src="lib/angular/angular-animate.js"></script>
     <script src="http://localhost:35729/livereload.js"></script>
+
     <script src="js/app.js"></script>
-    <script src="js/services.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/filters.js"></script>
-    <script src="js/directives.js"></script>
+
+    <script src="js/controllers/home.js"></script>
+    <script src="js/controllers/customers.js"></script>
+    <script src="js/controllers/customer.js"></script>
+
+    <script src="js/services/customers.js"></script>
     {{else}}
     <!-- Dist Only Scripts -->
     <script src="lib/angular/angular.min.js"></script>
@@ -33,6 +38,7 @@
     <script src="lib/angular/angular-animate.min.js"></script>
     <script src="dist/app.min.js"></script>
     {{end}}
+
 
   </body>
 </html>

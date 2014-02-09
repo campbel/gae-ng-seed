@@ -10,8 +10,8 @@ import (
 var templates = template.Must(template.ParseGlob("server/index.html"))
 
 type TemplateData struct {
-  Dev bool
-  XSRFToken string
+	Dev       bool
+	XSRFToken string
 }
 
 func init() {
@@ -22,9 +22,9 @@ func init() {
 
 func root(w http.ResponseWriter, r *http.Request) {
 	templates.ExecuteTemplate(w, "main", TemplateData{
-      Dev: appengine.IsDevAppServer(),
-      XSRFToken: CreateXSRFToken(w, r),
-    })
+		Dev:       appengine.IsDevAppServer(),
+		XSRFToken: CreateXSRFToken(w, r),
+	})
 }
 
 func loginHandle(w http.ResponseWriter, r *http.Request) {

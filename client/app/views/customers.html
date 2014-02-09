@@ -1,0 +1,22 @@
+<div class="page-header"><h1>Customers</h1></div>
+<section class="row">
+	<aside class="col-sm-4">
+		<div class="panel panel-default">
+			<header class="panel-heading"><h3 class="panel-title">New Customer</h3></header>
+			<div class="panel-body">
+				<form ng-submit="save()">
+					<div class="form-group">
+				    	<label for="newCustomerName">Name</label>
+			    		<input type="text" id="newCustomerName" class="form-control" placeholder="Enter name" required ng-model="newCustomer.Name">
+				  	</div>
+					<button class="btn btn-primary" type="submit">Save</button>
+				</form>		
+			</div>
+		</div>	
+	</aside>
+	<nav class="col-sm-8">
+	  <ul class="list-group">
+	    <li class="list-group-item" ng-repeat="customer in customers"><a ng-href="#/customers/{{customer.Id}}">{{customer.Name}}</a></li>
+	  </ul>
+	</nav>
+</section>

@@ -20,6 +20,7 @@ handlers:
   static_dir: client/app/dist
 - url: /.*
   script: _go_app
+  login: required
 skip_files:
 - ^(.*/)?#.*#
 - ^(.*/)?.*~

@@ -3,15 +3,15 @@ package server
 import (
 	"appengine"
 	"appengine/user"
-	"net/http"
 	"code.google.com/p/xsrftoken"
+	"net/http"
 )
 
 type XSRFEntity struct {
 	Token string
 }
 
-func CreateXSRFToken(w http.ResponseWriter, r *http.Request) (string) {
+func CreateXSRFToken(w http.ResponseWriter, r *http.Request) string {
 	c := appengine.NewContext(r)
 	u := user.Current(c)
 
@@ -22,10 +22,10 @@ func CreateXSRFToken(w http.ResponseWriter, r *http.Request) (string) {
 	// first parameter should be changed to a secret key
 	token := xsrftoken.Generate("myAppsSecretToken", u.ID, "api")
 
-	cookie := http.Cookie {
-		Name: "XSRF-token",
+	cookie := http.Cookie{
+		Name:  "XSRF-TOKEN",
 		Value: token,
-		Path: "/",
+		Path:  "/",
 	}
 
 	http.SetCookie(w, &cookie)
