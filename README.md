@@ -7,8 +7,8 @@ gae-ng-seed
 ##Included
 
 **Libraries**
-+ Bootstap CSS 2.0
-+ Angular JS 1.2 RC2
++ Bootstap CSS
++ Angular JS
 
 **Grunt Dev**
 + Sass
@@ -33,7 +33,7 @@ https://developers.google.com/appengine/downloads#Google_App_Engine_SDK_for_Go
 
 ###Run the Go Dev Server from the project root 
 
-<code>dev_appserver.py ./</code>
+<code>goapp serve</code>
 
 Typically the GAE dev server will run on port 8080. Browse to http://localhost:8080 to see the app running.
 
