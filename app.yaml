@@ -8,16 +8,22 @@ handlers:
   upload: favicon\.ico
 - url: /css
   static_dir: client/app/css
+  login: required
 - url: /img
   static_dir: client/app/img
+  login: required
 - url: /js
   static_dir: client/app/js
+  login: required
 - url: /lib
   static_dir: client/app/lib
+  login: required
 - url: /views
   static_dir: client/app/views
+  login: required
 - url: /dist
   static_dir: client/app/dist
+  login: required
 - url: /.*
   script: _go_app
   login: required

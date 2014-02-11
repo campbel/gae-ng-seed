@@ -6,23 +6,26 @@
       '$scope', 'customers',
       function($scope, customers) {
 
+        $scope.customers = [];
+
         var load = function() {
           customers.read()
             .then(function(response) {
-              if(response !== "null") {
+              if(response !== 'null') {
                 $scope.customers = response;
               }
             });
         };
 
+        load();
+
         $scope.save = function() {
           customers.create($scope.newCustomer)
-            .then(function() {
-              load();
+            .then(function(customer) {
+              $scope.customers.push(customer);
+              $scope.newCustomer = {};
             });
         };
-
-        load();
       }
     ]);
 

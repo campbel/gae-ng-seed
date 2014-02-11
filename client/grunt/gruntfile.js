@@ -9,16 +9,20 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['../app/css/app.scss'],
-        tasks: ['sass'],
+        tasks: ['sass:dev'],
         options: {
-          livereload: true
+          livereload: {
+            port: 8090
+          }
         },
       },
       js: {
         files: ['../app/js/app.js', '../app/js/**/*.js', '../test/unit/*.js'],
         tasks: ['jshint'],
         options: {
-          livereload: true
+          livereload: {
+            port: 8090
+          },
         }
       }
     },

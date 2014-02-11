@@ -15,8 +15,8 @@
 		</div>	
 	</aside>
 	<nav class="col-sm-8">
-	  <ul class="list-group">
-	    <li class="list-group-item" ng-repeat="customer in customers"><a ng-href="#/customers/{{customer.Id}}">{{customer.Name}}</a></li>
-	  </ul>
+	  <div class="list-group">
+	    <a class="list-group-item" ng-repeat="customer in customers" ng-href="#/customers/{{customer.Id}}">{{customer.Name}}</a>
+	  </div>
 	</nav>
 </section>
