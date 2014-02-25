@@ -21,9 +21,11 @@ func init() {
 }
 
 func root(w http.ResponseWriter, r *http.Request) {
+
+	CreateXSRFToken(w, r)
+
 	templates.ExecuteTemplate(w, "main", TemplateData{
-		Dev:       appengine.IsDevAppServer(),
-		XSRFToken: CreateXSRFToken(w, r),
+		Dev: appengine.IsDevAppServer(),
 	})
 }
 

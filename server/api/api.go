@@ -1,9 +1,11 @@
 package api
 
 import (
-  "github.com/campbel/gore"
+	"github.com/campbel/gore"
+	"net/http"
 )
 
 func init() {
-  gore.Start("/api/")
+	gore := gore.Module("api")
+	http.HandleFunc("/api/", gore.Handler)
 }
