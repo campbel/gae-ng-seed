@@ -20,6 +20,10 @@ func xsrfHandler(req *gore.Request, res *gore.Response) bool {
 		return true
 	}
 
+	if req.Raw.Method == "GET" {
+		return true
+	}
+
 	validToken := server.ValidateXSRFToken(res.Raw, req.Raw)
 	if !validToken {
 		res.Status(403)

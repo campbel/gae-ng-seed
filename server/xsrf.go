@@ -54,14 +54,7 @@ func ValidateXSRFToken(w http.ResponseWriter, r *http.Request) bool {
 		return false
 	}
 
-	headerTokens := r.Header[HEADER_NAME]
-	for _, headerToken := range headerTokens {
-		if xsrftoken.Valid(headerToken, appengine.AppID(c), u.ID, "API") {
-			if cookieToken == headerToken {
-				return true
-			}
-		}
-	}
+	headerToken := r.Header[HEADER_NAME][0]
 
-	return false
+	return cookieToken == headerToken
 }
