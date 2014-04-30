@@ -21,7 +21,7 @@ func init() {
 
 const entity_kind string = "customers"
 
-type Customer struct {
+type entity struct {
 	Id   int64
 	Name string
 }
@@ -31,7 +31,7 @@ func read(req *gore.Request, res *gore.Response) {
 
 	q := datastore.NewQuery(entity_kind)
 
-	var customers []Customer
+	var customers []entity
 	_, err := q.GetAll(c, &customers)
 	if err != nil {
 		res.Error(http.StatusInternalServerError, err)
@@ -57,7 +57,7 @@ func readById(req *gore.Request, res *gore.Response) {
 	}
 
 	key := datastore.NewKey(c, entity_kind, "", id, nil)
-	var customer Customer
+	var customer entity
 	if err := datastore.Get(c, key, &customer); err != nil {
 		res.Error(http.StatusNotFound, err)
 		return
@@ -68,7 +68,7 @@ func readById(req *gore.Request, res *gore.Response) {
 func create(req *gore.Request, res *gore.Response) {
 	c := appengine.NewContext(req.Raw)
 
-	var customer Customer
+	var customer entity
 	req.Body(&customer)
 
 	// get an Id
@@ -85,18 +85,18 @@ func create(req *gore.Request, res *gore.Response) {
 		return
 	}
 
-	var newCustomer Customer
-	if err := datastore.Get(c, key, &newCustomer); err != nil {
+	var newentity entity
+	if err := datastore.Get(c, key, &newentity); err != nil {
 		res.Error(http.StatusNotFound, err)
 		return
 	}
-	res.Send(newCustomer)
+	res.Send(newentity)
 }
 
 func delete(req *gore.Request, res *gore.Response) {
 	c := appengine.NewContext(req.Raw)
 
-	var customers []Customer
+	var customers []entity
 	req.Body(&customers)
 
 	keys := make([]*datastore.Key, len(customers))
@@ -133,7 +133,7 @@ func deleteById(req *gore.Request, res *gore.Response) {
 		return
 	}
 
-	var customer Customer
+	var customer entity
 	if err := datastore.Get(c, key, &customer); err != nil {
 		res.Send("Entity deleted")
 		return
