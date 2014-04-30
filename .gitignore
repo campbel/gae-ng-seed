@@ -1,2 +1,2 @@
-client/grunt/node_modules/*
-client/grunt/.sass-cache/*
+client/grunt/node_modules/
+client/grunt/.sass-cache/
