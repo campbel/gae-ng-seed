@@ -1,0 +1,10 @@
+{
+  "predef": [
+    "angular",
+    "describe",
+    "beforeEach",
+    "it",
+    "expect",
+    "module"
+  ]
+}
