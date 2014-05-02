@@ -27,6 +27,21 @@
         expect(scope.tasks).toEqual(['foo','bar','baz']);
       });
     });
+
+    describe('add tasks', function() {
+      it('correctly adds a new task', function() {
+        expect(scope.tasks.length).toEqual(3);
+        scope.add();
+        expect(scope.tasks.length).toEqual(3);
+        scope.newTask = 'qux';
+        scope.add();
+        expect(scope.tasks.length).toEqual(4);
+        expect(scope.tasks[3]).toEqual('qux');
+        expect(scope.newTask).toEqual('');
+      });
+
+    });
+
   });
 
 }());

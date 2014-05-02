@@ -9,9 +9,16 @@ angular.module('myApp')
           },
           function(response) {
             $scope.error = true;
+            $scope.tasks = [];
           }
         );
       };
       loadTasks();
+
+      $scope.add = function() {
+        if(!$scope.newTask) return;
+        $scope.tasks.push($scope.newTask);
+        $scope.newTask = '';
+      };
     }
   ]);
