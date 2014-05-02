@@ -1,6 +1,5 @@
-// App
 (function() {
-'use strict';
+	'use strict';
 
 	angular.module('myApp', ['ngRoute', 'ngAnimate'])
 		.config(['$routeProvider', '$httpProvider', function($routeProvider, $http) {
@@ -10,4 +9,3 @@
 			$routeProvider.otherwise({redirectTo: '/'});
 		}]);
 }());
-
