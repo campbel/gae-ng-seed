@@ -18,7 +18,7 @@ module.exports = function(grunt) {
       },
       js: {
         files: ['../app/js/app.js', '../app/js/**/*.js', '../test/unit/*.js'],
-        tasks: ['jshint'],
+        tasks: ['jshint', 'karma:dev'],
         options: {
           livereload: {
             port: 8090
