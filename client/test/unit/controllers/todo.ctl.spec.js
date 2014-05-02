@@ -14,7 +14,7 @@
       spyOn(todo, 'get').andReturn(dm.promise);
       dm.resolve({tasks:['foo','bar','baz']});
 
-      $controller('todo', {
+      $controller('TodoCtl', {
         $scope: scope,
         Todo: todo
       });

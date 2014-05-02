@@ -1,0 +1,17 @@
+<div class="page-header"><h1>Todo</h1></div>
+<section class="row">
+  <aside class="col-sm-4">
+    <div class="panel panel-default">
+      <header class="panel-heading"><h3 class="panel-title">New Task</h3></header>
+      <div class="panel-body">
+        <form ng-submit="save()">
+          <div class="form-group">
+              <label for="newTask">New Task</label>
+              <input type="text" id="newTask" class="form-control" placeholder="Enter task" required ng-model="newTask">
+            </div>
+          <button class="btn btn-primary" type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+  </aside>
+</section>

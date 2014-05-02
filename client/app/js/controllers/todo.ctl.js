@@ -1,5 +1,5 @@
 angular.module('myApp')
-  .controller('todo', [
+  .controller('TodoCtl', [
     '$scope', 'Todo',
     function($scope, Todo) {
       var loadTasks = function() {
