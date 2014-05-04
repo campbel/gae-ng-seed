@@ -15,8 +15,6 @@
       <div ng-view></div>
     </div>
 
-    <input type="hidden" id="xsrftoken" name="xsrftoken" value="{{.XSRFToken}}"/>
-
     <!-- Dev / Dist Scripts -->
     {{if .Dev}}
     <!-- Dev Only Scripts -->
@@ -26,10 +24,6 @@
     <script src="http://localhost:8090/livereload.js"></script>
 
     <script src="js/app.js"></script>
-
-    <script src="js/controllers/todo.ctl.js"></script>
-
-    <script src="js/services/todo.svc.js"></script>
     {{else}}
     <!-- Dist Only Scripts -->
     <script src="lib/angular/angular.min.js"></script>
