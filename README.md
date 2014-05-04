@@ -1,7 +1,5 @@
 gae-ng-seed
 ===========
-<a href="https://gae-ng-seed.appspot.com/">See the seed project running</a>
-
 <a href="https://developers.google.com/appengine/">Google App Engine</a> / <a href="http://golang.org/">Go Lang</a> / <a href="http://angularjs.org/">Angular JS</a>
 
 ##Included
@@ -9,16 +7,12 @@ gae-ng-seed
 **Libraries**
 + Bootstap CSS
 + Angular JS
-
-**Grunt Dev**
 + Sass
 + Karma
 + JSHint
-
-**Grunt Dist**
 + Uglify
 
-The server uses Go Templating from "html/template" package to drive which scripts to load (pretty vs minified).
+The server uses templating from Go's "html/template" package.
 
 ##Install & Setup
 
