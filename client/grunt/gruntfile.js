@@ -78,7 +78,7 @@ module.exports = function(grunt) {
             'app/lib/angular/angular-animate.js',
             'test/lib/angular/angular-mocks.js',
             'app/dist/app.min.js',
-            'test/unit/*.js'
+            'test/unit/**/*.js'
           ],
         },
         configFile: 'karma.conf.js',
