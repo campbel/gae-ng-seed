@@ -4,6 +4,7 @@ import (
 	"appengine"
 	"appengine/user"
 	"github.com/campbel/gore"
+	"net/http"
 	"server"
 )
 
@@ -12,21 +13,21 @@ func init() {
 	gore.Middleware("/api/", xsrfHandler)
 }
 
-func xsrfHandler(req *gore.Request, res *gore.Response) bool {
-	c := appengine.NewContext(req.Raw)
+func xsrfHandler(w http.ResponseWriter, r *http.Request, x gore.Context) bool {
+	c := appengine.NewContext(r)
 	u := user.Current(c)
 
 	if u == nil {
 		return true
 	}
 
-	if req.Raw.Method == "GET" {
+	if r.Method == "GET" {
 		return true
 	}
 
-	validToken := server.ValidateXSRFToken(res.Raw, req.Raw)
+	validToken := server.ValidateXSRFToken(w, r)
 	if !validToken {
-		res.Status(403)
+		x.Status(403)
 		return false
 	}
 
