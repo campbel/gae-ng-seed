@@ -9,9 +9,8 @@ import (
 
 var templates = template.Must(template.ParseGlob("server/index.html"))
 
-type TemplateData struct {
-	Dev       bool
-	XSRFToken string
+type rootTemplateData struct {
+	Dev bool
 }
 
 func init() {
@@ -24,7 +23,7 @@ func root(w http.ResponseWriter, r *http.Request) {
 
 	CreateXSRFToken(w, r)
 
-	templates.ExecuteTemplate(w, "main", TemplateData{
+	templates.ExecuteTemplate(w, "main", rootTemplateData{
 		Dev: appengine.IsDevAppServer(),
 	})
 }
