@@ -4,14 +4,6 @@ gae-ng-seed
 
 ##Included
 
-**Libraries**
-+ Bootstap CSS
-+ Angular JS
-+ Sass
-+ Karma
-+ JSHint
-+ Uglify
-
 The server uses templating from Go's "html/template" package.
 
 ##Install & Setup
@@ -24,6 +16,13 @@ https://developers.google.com/appengine/downloads#Google_App_Engine_SDK_for_Go
 ###Clone the gae-ng-seed project 
 
 <code>git clone https://github.com/campbel/gae-ng-seed.git</code>
+
+###Bower Install
+
+<code>
+cd client
+bower install
+</code>
 
 ###Run the Go Dev Server from the project root 
 
