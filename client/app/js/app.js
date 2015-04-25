@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	angular.module('myApp', ['ngRoute', 'ngAnimate'])
+	angular.module('myApp', ['ngRoute'])
 		.config(['$routeProvider', '$httpProvider', function($routeProvider, $http) {
 			$routeProvider.when('/', {
 				controller: 'TodoCtl',

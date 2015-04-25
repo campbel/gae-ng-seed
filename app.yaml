@@ -12,8 +12,8 @@ handlers:
   static_dir: client/app/img
 - url: /js
   static_dir: client/app/js
-- url: /lib
-  static_dir: client/app/lib
+- url: /bower_components
+  static_dir: client/app/bower_components
 - url: /views
   static_dir: client/app/views
 - url: /dist
