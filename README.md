@@ -19,10 +19,9 @@ https://developers.google.com/appengine/downloads#Google_App_Engine_SDK_for_Go
 
 ###Bower Install
 
-<code>
-cd client
-bower install
-</code>
+<code>cd client</code>
+<br/>
+<code>bower install</code>
 
 ###Run the Go Dev Server from the project root 
 
